@@ -1,7 +1,9 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
-def aluno(request):
-    t_html = "<!DOCTYPE html><html><body><h1>Nome: Fábio Anderson</h1></body></html>"
-    return HttpResponse(t_html)
+def listar(request):
+    return render(request, 'aluno/listarAlunos.html')
+
+def cadastro(request):
+    return render(request, 'aluno/cadastroAluno.html')
 
 
