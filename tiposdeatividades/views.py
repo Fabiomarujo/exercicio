@@ -1,12 +1,7 @@
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import render
 
-# Create your views here.
-def index(request): 
-    return HttpResponse("Ola! Eu sou index.")
+def listar(request):
+    return render(request, 'tiposdeatividades/listarTiposAtividade.html')
 
-def exibe_mensagem(request):
-    t_html = "<DOCType html><html><body>Ola Mundo</body></html>"
-    return HttpResponse(t_html)
-
-def test_render(request):
-    return render(request, 'escola.html')
+def cadastro(request):
+    return render(request, 'tiposdeatividades/cadastroTiposAtividade.html')

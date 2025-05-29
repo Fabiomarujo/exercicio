@@ -21,11 +21,11 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='escola.html')),
-    path('tiposdeatividades/', include('tiposdeatividades.urls')),  
-    # path("", include('tiposdeatividades.urls')),
+    path('tiposdeatividades/', include('tiposdeatividades.urls', namespace='tiposdeatividades')),  
     path('aluno/', include('aluno.urls', namespace='aluno')),
     path('instrutor/', include('instrutor.urls', namespace='instrutor')),
-    path('titulo/', include('titulo.urls')),
-    path('turma/', include('turma.urls')),
-    path('utilitarios/', include('utilitarios.urls')),
+    path('titulo/', include('titulo.urls', namespace='titulo')),
+    path('turma/', include('turma.urls', namespace='turma')),
+    path('utilitarios/', include('utilitarios.urls', namespace='contato')),
+    # path('contato/', include('contato.urls', namespace='contato')),
 ]

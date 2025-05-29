@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-def cadinstrutor(request):
+def cadastro(request):
     return render(request, 'instrutor/cadastroInstrutor.html')
 
-def listarInst(request):
-    return render(request, 'instrutor/listarInsrutores.html')
+def listar(request):
+    return render(request, 'instrutor/listarInstrutores.html')
 

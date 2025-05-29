@@ -5,6 +5,6 @@ from . import views
 app_name = 'instrutor'
 
 urlpatterns = [
-    path("cadinstrutor", views.cadinstrutor, name="cadinstrutor"), 
-    path("listarInst", views.listarInst, name="listarInst"),         
+    path("cadastro", views.cadastro, name="cadastro"), 
+    path("listar", views.listar, name="listar"),         
 ]
