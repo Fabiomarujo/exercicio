@@ -48,37 +48,30 @@
                         <th>DDD</th>
                         <th>Telefone</th>
                         <th>Titularidade</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
 
                 <!-- linhas -->
                 <tr>
-                    <td> 1 </td>
-                    <td> Jefferson Gonçalves </td>
-                    <td> 099998888 </td>
-                    <td> 05/10/1978 </td>
-                    <td> 021 </td>
-                    <td> 897698512 </td>
-                    <td> Professor Doutor </td>
-                </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td> Maria Joaquina </td>
-                    <td> 125487966 </td>
-                    <td> 10/01/1987 </td>
-                    <td> 021 </td>
-                    <td> 12322211 </td>
-                    <td> Professor Doutor </td>
-                </tr>
-                <tr>
-                    <td> 3 </td>
-                    <td> Juliana Fergusson </td>
-                    <td> 874895692 </td>
-                    <td> 15/11/1968 </td>
-                    <td> 022 </td>
-                    <td> 87474774 </td>
-                    <td> Professor Sabe-Tudo </td>
-                </tr>
+                    <td> {{ instrutor.id }} </td>
+                    <td> {{ instrutor.nome }} </td>
+                    <td> {{ instrutor.rg }} </td>
+                    <td> {{ instrutor.dataNascimento }} </td>
+                    <td> {{ instrutor.ddd }} </td>
+                    <td> {{ instrutor.telefone }} </td>
+                    {% comment %} <td> {{ instrutor.titularidade }} </td> {% endcomment %}
+                    <td>
+                        <a href="{% url 'instrutor:carregar_instrutor' instrutor.id %}" class="btn btn-mini" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><i class="far fa-edit"></i></a>
+                            <button type="button" class="btn" role="button" 
+                            data-target="#modalExcluirInstrutor" 
+                            data-toggle="modal"  
+                            data-descricao="{{ titulo.descricao }}"
+                            data-url="{% url 'instrutor:excluir_instrutor' instrutor.id %}">
+                             <i class="far fa-trash-alt"></i>
+                            </button>
+                     </td> 
+                </tr>                
             </table>
         </div>
     </main>

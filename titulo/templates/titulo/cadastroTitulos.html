@@ -21,17 +21,20 @@
                 <h2 class="mt-2 mb-5 my-h2">Cadastrar</h2>
             </div>
         </div>
-        <form action="#" method="POST" name="frmCadastrarTitulo" id="idFrmCadastrarTiposAtividade">
+        <form action="{% url 'titulo:cadastrar' %}" method="POST" name="formCadastrarTitulo" id="idFormCadastrarTitulo">
+            {% csrf_token %}
             <div class="form-group">
                 <label for='idDescricao'>Descrição</label>
                 <input class="form-control" type='text' id='idDescricao' name='descricao' placeholder='Informe a descrição' required>
             </div>
             <div class='form-group text-center'>
                 <input type='reset'  value='Limpar' class='btn btn-primary btn-md'>
-                <input type='submit' value='Cadastrar' class='btn btn-primary btn-md' id="btnCadastrarTiposAtividade">
+                <input type='submit' value='Cadastrar' class='btn btn-primary btn-md' id="btnCadastrarTitulo">
             </div>
         </form>
     </main>
+
+
 {% endblock %}
 
 
